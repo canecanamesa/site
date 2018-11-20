@@ -27,8 +27,6 @@ E eu jamais poderia esquecer uma citação famosa:
 
 > I believe it was the great American painter Bob Ross who said "The key to a swollen vagina is... courage"
 >
-> \
->
 > \-- Katya Zamo, RuPaul's Drag Race, Season 7
 
 Se quiser pode ver [esse link](https://www.youtube.com/watch?v=o4Be-v92v_o) um vídeo dessa excelente citação. Ou ver abaixo:
