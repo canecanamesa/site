@@ -6,7 +6,7 @@ description: Este é um post que eu facilmente criei aqui rapidinho só pra test
 tags:
   - teste
 ---
-dsAqui poderia entrar um conteúdo muito rico e eu decidi aproveitar isso. Sem muitas delongas, então **vamos lá**!
+Aqui poderia entrar um conteúdo muito rico e eu decidi aproveitar isso. Sem muitas delongas, então **vamos lá**!
 
 # Primeira coisa: esse título
 
@@ -34,7 +34,5 @@ E eu jamais poderia esquecer uma citação famosa:
 Se quiser pode ver [esse link](https://www.youtube.com/watch?v=o4Be-v92v_o) um vídeo dessa excelente citação. Ou ver abaixo:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o4Be-v92v_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
 E acho que acabou, né? Já temos tudo o que precisa... creio. Até a próxima!
