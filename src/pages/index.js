@@ -2,6 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Sidebar from '../components/Sidebar'
+import imgTitle from '../img/subtitulos.jpg'
+
+const monthNames = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro',
+]
 
 export default class IndexPage extends React.Component {
   render() {
@@ -10,37 +27,45 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+        <div className="tile is-8 is-parent is-vertical">
+          <div className="tile is-child">
+            <div className="content home">
+              <h1 className="has-text-weight-bold is-size-2">Últimas</h1>
+              {posts.map(({ node: post }) => {
+                const theDate = new Date(post.frontmatter.date)
+                const ptDate = `${theDate.getDay()} ${monthNames[
+                  theDate.getMonth()
+                ].substring(0, 3)} ${theDate.getFullYear()}`
+                const ptDate2 = `${theDate.getDay()} ${
+                  monthNames[theDate.getMonth()]
+                } ${theDate.getFullYear()}`
+                return (
+                  <div className="box" key={post.id}>
+                    <Link className="title-link" to={post.fields.slug}>
+                      <h2 className="title is-4">
+                        {post.frontmatter.title}
+                        <img src={imgTitle} alt="" role="presentation" />
+                      </h2>
+                    </Link>
+                    {/* <small>{ptDate}</small> */}
+                    <p className="post-info">{ptDate2}</p>
+                    <p>
+                      {post.excerpt}
+                      <br />
+                      <br />
+                      <Link className="button is-small" to={post.fields.slug}>
+                        Leia mais →
+                      </Link>
+                    </p>
+                  </div>
+                )
+              })}
             </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
           </div>
-        </section>
+        </div>
+        <div className="tile is-4 is-parent is-vertical">
+          <Sidebar />
+        </div>
       </Layout>
     )
   }
@@ -57,8 +82,8 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
     ) {
       edges {
         node {
@@ -70,7 +95,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM, YYYY")
           }
         }
       }

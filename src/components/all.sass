@@ -1,11 +1,14 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
 
 // Config vars
 $kaldi-red: #FD461E
 $kaldi-red-invert: #fff
+$caneca-cyan: #55b0a9
+$grey: #ddd
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $caneca-cyan
 
 .content .taglist
   list-style: none
@@ -40,3 +43,90 @@ $primary-invert: $kaldi-red-invert
   margin-top: 0 !important
 
 @import "~bulma"
+
+.navbar-item img
+  max-height: inherit
+
+body
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Francois One', 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+
+.navbar
+  background: transparent
+
+.navbar-background
+  position: absolute
+  background: linear-gradient(to right, rgba(0, 0, 0, .15) 0%,rgba(0, 0, 0, .15) 90%,rgba(0, 0, 0, 0) 100%)
+  width: 90%
+  height: 50px
+  top: 54px
+  left: 50px
+
+.navbar-start
+  margin-top: 10px
+  a:hover
+    color: $primary
+
+.home
+  .title-link
+    color: $black
+    &:hover
+      color: $primary
+      border-color: $primary
+  .box
+    overflow: hidden
+    position: relative
+    small
+      position: absolute
+      left: 1.3rem
+      top: 0.5rem
+  .title
+    border-bottom: 5px solid #333
+    line-height: 1.5
+    text-transform: uppercase
+    padding: .2em 0
+    position: relative
+    &:hover
+      color: $primary
+      border-color: $primary
+    img
+      // position: absolute
+      // right: 0
+      // height: 41px
+      // opacity: 0.2
+      // width: 330px
+      position: absolute
+      left: -50px
+      top: -20px
+      height: 150px
+      opacity: 0.1
+      transform: scaleX(-1)
+
+.post-info
+  background: rgba(0, 0, 0, 0.08)
+  padding: 0.3rem 1rem
+  margin: 0
+  margin-top: -13px
+  margin-bottom: 5px
+
+.box
+  border-radius: 0
+
+.sidebar
+  margin-top: 14px
+
+.social-container
+  display: flex
+  padding: 0
+  margin: 0
+
+.social-item
+  padding: 0
+  margin: 0
+  svg
+    fill: $primary
+
+// .navbar.is-transparent a.navbar-item:hover
+//   background: red
