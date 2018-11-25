@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 'Alguma coisa, só isso'
-featured: /img/capa_face2.jpg
+featured: /img/lady-gaga.jpg
 date: 2018-11-20T21:37:06.753Z
 description: Este é um post que eu facilmente criei aqui rapidinho só pra testar esse trem
 tags:
