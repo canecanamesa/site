@@ -6,14 +6,13 @@ import './all.sass'
 import backgroundImage from '../img/gplaypattern.png'
 
 const TemplateWrapper = ({ children }) => (
-  <div className="container">
-    <Helmet>
-      <title>Caneca na Mesa</title>
-      <body style={`background: url(${backgroundImage})`} />
-    </Helmet>
-    <Navbar />
+  <div style={{ background: `url(${backgroundImage})` }}>
     <div className="container">
-      <div className="tile is-ancestor">{children}</div>
+      <Helmet title="Caneca na Mesa" />
+      <Navbar />
+      <div className="container">
+        <div className="tile is-ancestor">{children}</div>
+      </div>
     </div>
   </div>
 )
